@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize%}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<div class="container pt-4"  style="min-height: 30rem !important">
+
+
+    <div class="row justify-content-between mt-5">
+        <div class="col">
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title py-2 text-center">Cursos</h5>
+                  <hr>
+                  {% for t in tp %}
+                  <p class="card-text"> {{t.nombre}}</p>
+                  <p class="card-text"><small class="text-muted">${{t.valor | intcomma}}</small></p>
+                  {% endfor %}
+                  
+                </div>
+                <hr>
+                <a href="{% url 'IndexTipoCurso' %}" class="text-muted p-3 text-center"><small>Ver más...</small></a>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title py-2 text-center"><a href="#" style="color: #000;">Alumnos</a></h5>
+                  <hr>
+                  {% for a in alumno %}
+                  <p class="card-text"> {{a.nombre}} {{a.apaterno}} {{a.amaterno}}</p>
+                  <p class="card-text"><small class="text-muted">{{a.rut}}</small></p>
+                  {% endfor %}
+                  
+                </div>
+                <hr>
+                <a href="{% url 'IndexAlumnos' %}" class="text-muted p-3 text-center"><small>Ver más...</small></a>  
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title py-2 text-center">Sucursales</h5>
+                  <hr>
+                  {% for s in sucursales %}
+                  <p class="card-text hover"> {{s.nombre}}</p>
+                  <p class="card-text"><small class="text-muted">ID {{s.id}}</small></p>
+                  {% endfor %}
+                  
+                  
+                </div>
+                <hr>
+                <a href="{% url 'IndexSucursales' %}" class="text-muted p-3 text-center"><small>Ver más...</small></a>
+              </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+
+
+{% endblock %}
+
+

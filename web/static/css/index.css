@@ -1,0 +1,13 @@
+.card{
+    min-height: 25rem !important;
+    transition: 0.3s linear;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-body{
+    min-height: 19rem !important;
+
+}

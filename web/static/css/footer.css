@@ -1,0 +1,21 @@
+footer{
+    position: relative !important;
+    bottom: 0rem !important;
+}
+
+
+
+.footer{
+
+    width: 100%;
+    background-color: #121222 !important;
+    color: #fff !important;
+    margin-top: 7rem !important;
+    
+}
+
+p{
+    font-weight: 100 !important;
+    font-size: small;
+    font-family: -apple-system, BlinkMacSystemFont !important;
+}

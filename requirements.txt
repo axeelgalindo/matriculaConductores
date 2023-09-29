@@ -1,0 +1,8 @@
+django-filter
+django-crispy-forms
+crispy-bootstrap5
+djangorestframework
+PyMySQL
+
+##hacer esto 
+## source nombre_del_entorno_virtual/bin/activate

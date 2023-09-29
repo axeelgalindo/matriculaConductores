@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block css %}
+<link rel="stylesheet" href="{% static '../static/css/alumnos/alumno.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block contenido %}
+
+    <div class="container">
+        <div class="card">
+            <div class="card-title text-center p-1">
+                <h3><i class="bi bi-person-circle"></i></h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5>ID</h5>
+                    <div class="d-flex justify-content-center">
+                        <p class="texto">{{usu.usuario}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <h5>TIPO CURSO</h5>
+                    <div class="d-flex justify-content-center">
+                        <p class="texto">{{usu.nombre}}</p>
+                    </div>
+                </div>
+                <HR>
+               
+            </div>
+            <div class="card-footer d-flex mt-3 mb-4">
+                <a href="{% url 'IndexUsuarios' %}" class="btnEditar editar  pt-1 text-center "><p>Volver</p></a>
+                <a href="#" class="btnEditar editar  pt-1 text-center "><p>Editar</p></a>
+                <a class="btnEliminar  eliminar  text-center text-muted"  type="button" data-bs-toggle="collapse" 
+                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Eliminar
+                </a>
+            </div>
+            <div class="collapse" id="collapseExample">
+                <div class="mb-3 text-center card-body">
+                <p class="text-center">¿Confirmar?</p>
+                <a href="#" id="C4" class="btn btn-dark"><i class="bi bi-person-x-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

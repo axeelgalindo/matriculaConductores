@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static '../static/css/alumnos/alumno.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block contenido %}
+
+<div class="container">
+
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+            <H2 class="text-center mt-1 p-1">
+                <i class="bi bi-person-add"></i>
+
+            </H2>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="rut" placeholder="name@example.com" value="{{alumno.rut}}" maxlength="12">
+                <label for="floatingInput">Rut</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="nombre" placeholder="name@example.com" value="{{alumno.nombre}}" maxlength="15">
+                <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="apaterno" placeholder="name@example.com" value="{{alumno.apaterno}}" maxlength="15">
+                <label for="floatingInput">Apellido Paterno</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="amaterno" placeholder="name@example.com" value="{{alumno.amaterno}}" maxlength="15">
+                <label for="floatingInput">Apellido Materno</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="direccion" placeholder="name@example.com" value="{{alumno.direccion}}" maxlength="60" >
+                <label for="floatingInput">Dirección</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="email" placeholder="name@example.com" value="{{alumno.email}}" maxlength="40">
+                <label for="floatingInput">Email</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="fono" placeholder="name@example.com" value="{{alumno.fono}}" maxlength="10">
+                <label for="floatingInput">Fono</label>
+            </div>
+            <div class="card-footer d-flex mb-3 ">
+                <a href="{% url 'IndexAlumnos' %}" class="Modificar text-center mod-btn-back"><p class="mt-2"><p>Volver</p></a>
+
+                <button type="submit" class="Modificar mod-btn-confirm">
+                    <i class="bi bi-person-add"></i>
+                </button>
+
+          
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+
+
+{% endblock %}

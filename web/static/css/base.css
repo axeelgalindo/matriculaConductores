@@ -1,0 +1,123 @@
+*{
+    font-family: Work sans;
+}
+html{
+    min-height: 100%;
+}
+/* NAV */
+.site-header{
+    padding: 1rem !important;
+    background-color: rgba(18,18,34,.95);
+    backdrop-filter: blur(50px) !important;
+    opacity: 0.97;
+}
+
+.py-2:hover{
+    color: rgba(28, 142, 51, 0.268) !important;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: 10;
+    box-shadow: none;
+}
+
+.btn:hover{
+    background-color: rgba(0, 166, 255, 0.2);}
+
+.btn{
+    border-radius: 2rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+
+h6{
+    color:#fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #000 !important;
+    
+}
+li{
+    background-color: rgba(36, 36, 51, 0.95);
+    padding: 1rem !important;
+}
+
+li:hover{
+    background-color: #fff;
+    color: #000 !important;
+}
+
+ul{
+    padding: 0 !important;
+    margin: 0;
+    transform: translate3d(0px, 65px, 0px) !important;
+    background-color: rgba(36, 36, 51, 0.95);
+}
+
+/* NAV */
+/* DROPDOWNS */
+.dropdown-menu{
+    width: 80% !important;
+    background-color: rgba(36, 36, 51, 0.95);
+}
+
+
+.arch{
+    margin-left: -2rem !important;
+}
+.mov{
+    margin-left: -0.6rem !important;
+}
+.con{
+    margin-left: -1.1rem !important;
+}
+
+/* DROPDOWNS */
+
+
+
+
+
+/* ONLY LOGIN BACKGROUND */
+
+.login{
+    background-image: url('../img/background.jpeg');
+    background-position: center;
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-color: #121222;
+}
+/* 
+.card{
+    opacity: 0.92;
+    transition: transform .4s;
+}
+*/
+.form-floating{
+    width: 70%;
+    margin: auto;
+}
+
+.w-100{
+    width: 70% !important;
+}
+/*
+.card:hover{
+    transform: scale(1.2);
+}*/
+.w-100:hover{
+    background-color: #121222 !important;
+}
+input{
+    font-family: -apple-system, BlinkMacSystemFont !important;
+}

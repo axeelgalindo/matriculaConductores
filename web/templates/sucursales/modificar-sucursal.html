@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static '../static/css/alumnos/alumno.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block contenido %}
+
+<div class="container style='min-height: 27rem !important'">
+    <div class="card">
+
+        <form method="POST">
+            {% csrf_token %}
+            <H2 class="text-center mt-1 p-1">
+                <i class="bi bi-person-add"></i>
+            </H2>
+                <hr>
+                <div class="form-floating mb-3">
+
+                    <form method="POST">
+                        <div class="form-floating mb-3">
+                            <p class="text-small">
+                                <label for="fecha">Nombre</label>
+                            </p>   
+                            <input type="text"  class="form-control" required  name="nombre" id="nombre" value="{{sucursales.nombre}}">  
+                        </div>
+                        <div class="form-floating mb-3">
+                                    <p class="text-small">
+                                        <label for="ticurso">Ciudad</label>
+                                    </p>            
+                                    <select  class="form-control" required name="ciudadid" id="ciudadid"  > 
+                                        <option value="" >Seleccione</option> 
+                                        {% for c in ciu %}
+                                        {% if c.id == sucursales.ciudadId.id %}
+                                        <option value="{{c.id}}"selected>{{c.nombre}}</option> 
+                                        {% else %}
+                                        <option value="{{c.id}}">{{c.nombre}}</option> 
+                                        {% endif %}
+                                        {% endfor %}
+                                    </select> 
+                                    
+                        </div>
+
+                       <!--
+                        <input type="text" value="{{sucursales.ciudadId.nombre}}">-->
+                       
+                    
+
+                        
+                </div>
+                
+                <div class="card-footer d-flex mb-3 ">
+                    <a href="{% url 'IndexSucursales' %}" class="Modificar text-center mod-btn-back"><p class="mt-2">Volver</p></i></a>
+                    <input type="submit" value="Modificar" class="Modificar mod-btn-confirm">
+                </div>  
+            </form>
+            
+        
+        
+    </div>
+</div>
+
+
+{% endblock %}

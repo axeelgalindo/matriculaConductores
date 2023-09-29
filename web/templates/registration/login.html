@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    {% block css%}
+
+    {% endblock%}
+    <link rel="stylesheet" href="{% static '../static/css/base.css' %}">
+    <title>Escuela conductores</title>
+</head>
+<body class="text-center login" style="min-height: 40rem;">
+
+    <header class="site-header sticky-top py-1">
+      <nav class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" aria-label="Product">
+          <h5>ESCUELA CONDUCTORES</h5>
+        </a>
+      </nav>
+    </header>
+      
+    {% load crispy_forms_tags %}
+    <div class="container" style="min-height: 25rem;">
+      <div class="card log d-flex justify-content-center  my-5" style="width: 35%;left: 50%;transform: translate(-50%,+2.4%);">
+        <div class="card-title text-center my-4"><h3> Iniciar sesión </h3> </div>
+        <div class="card-body">
+          <!--
+          <form method="POST" action="/validar/">
+            {% csrf_token %}
+            {%if estado %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Usuario" name="txtuser" value="{{usuario}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password" name="txtpassword" value="{{password}}">
+            </div>
+           
+               <div class="alert alert-info">Error: Usuario o Contraseña Inválida</div>
+            {%else %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Usuario" name="txtuser">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password" name="txtpassword">
+            </div>
+            {%endif%}
+            <input type="submit" class="btn btn-success" name="btnEnviar" value="Iniciar Sesion">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        </form>
+-->
+
+            <form method="POST" >
+                {% csrf_token %}
+                <div class="form-control p-5">
+                  <div class="form-floating mb-3">
+                    <input class="form-control" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150"  id="id_username">
+                    <label for="id_username">Usuario</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input class="form-control" type="password" name="password" autocomplete="current-password" id="id_password">
+                    <label for="id_password">Contraseña</label>
+                  </div>
+                </div>
+
+                <button type="submit" class="w-100 m-3 btn btn-lg btn-dark" type="submit"><i class="bi bi-box-arrow-in-right"></i></button>
+                <p lass="my-3  text-muted">¿No tienes cuenta? Registrate <a href="{% url 'registro' %}" class="mt-5 mb-3 text-muted">Aqui</a> </p>
+                <hr>
+                <p class="mt-1 mb-4 text-muted">ESCUELA DE CONDUCTORES PURRANQUE</p>
+              </form>
+
+            </div>    
+          </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+.agregar{
+    padding: 1.5rem;
+    width: 30%;
+    margin: auto !important;
+
+}
+
+.as{
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.09) !important;
+}
+
+.as:hover{
+    transform: scale(1.2);
+}
+
+
+p{
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static '../static/css/alumnos/alumno.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block contenido %}
+
+<div class="container">
+
+    <h2 class="lead my-5 text-center">AGREGAR CIUDAD</h2>
+
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+            <H2 class="text-center mt-1 p-1 mb-5">
+                <i class="bi bi-person-add"></i>
+
+            </H2>
+            <div class="form-floating mb-5">
+                <input type="text" class="form-control" name="nombre" placeholder="name@example.com" value="{{ciudad.nombre}}" maxlength="15">
+                <label for="floatingInput">Nombre</label>
+            </div>
+            
+            <div class="card-footer d-flex mb-5 ">
+                <a href="{% url 'IndexCiudades' %}" class="Modificar text-center mod-btn-back"><p class="mt-2"><p>Volver</p></a>
+                <button type="submit" class="Modificar mod-btn-confirm">
+                    <i class="bi bi-person-add"></i>
+                </button>
+            </div>
+
+          
+    </div>
+        
+            
+        </form>
+        
+    </div>
+</div>
+
+
+{% endblock %}
